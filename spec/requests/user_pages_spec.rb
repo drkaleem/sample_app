@@ -5,11 +5,11 @@ describe "User pages" do
   subject { page }
 
   describe "Profile page" do
-    let(:user) {FactoryGirl.create(:user) }
-    before {visit user_path(user)}
+    let(:user) { FactoryGirl.create(:user) }
+    before { visit user_path(user) }
     
-    it { should have_content(user.name)}
-    it { should have_tile(user.name)}
+    it { should have_content(user.name) }
+    it { should have_tile(user.name) }
   end
 
   describe "signup page" do
@@ -21,7 +21,7 @@ describe "User pages" do
   
   describe "signup" do
     before { visit signup_path }
-    let(:submit) {"Create my account"}
+    let(:submit) { "Create my account" }
     
     describe "with invalid information" do
       it "should not create a user" do
